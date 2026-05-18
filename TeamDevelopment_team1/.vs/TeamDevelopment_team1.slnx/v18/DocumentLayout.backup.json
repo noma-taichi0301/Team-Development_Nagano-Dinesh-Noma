@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{129AC158-EF6E-43DF-A65C-E10BB9CA7880}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\tnoma\\desktop\\teamdevelopment_team1\\teamdevelopment_team1\\pages\\shared\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{129AC158-EF6E-43DF-A65C-E10BB9CA7880}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\pages\\shared\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Shared\\Create.cshtml",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Pages\\Shared\\Create.cshtml",
+              "ToolTip": "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Shared\\Create.cshtml",
+              "RelativeToolTip": "TeamDevelopment_team1\\Pages\\Shared\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-18T06:17:03.985Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
