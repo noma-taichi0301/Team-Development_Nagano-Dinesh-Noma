@@ -1,0 +1,10 @@
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.csproj.AssemblyReference.cache
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.AssemblyInfoInputs.cache
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.AssemblyInfo.cs
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.csproj.CoreCompileInputs.cache
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.RazorAssemblyInfo.cache
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.RazorAssemblyInfo.cs
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.sourcelink.json
