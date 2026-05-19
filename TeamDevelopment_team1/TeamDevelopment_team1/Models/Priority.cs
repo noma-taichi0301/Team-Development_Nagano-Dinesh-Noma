@@ -1,6 +1,9 @@
 ﻿namespace TeamDevelopment_team1.Models
 {
-    public class Priority
+    public enum Priority
     {
+        Low = 1,
+        Mid,
+        High
     }
 }

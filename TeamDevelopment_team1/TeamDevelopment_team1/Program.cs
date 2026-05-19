@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+// 依存性注入の設定: ITodoRepository を TodoRepository にマッピングします。
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 
 var app = builder.Build();
