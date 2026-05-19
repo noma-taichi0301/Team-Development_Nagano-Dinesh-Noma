@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj": {}
+    "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj": {
+    "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
+        "projectUniqueName": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
         "projectName": "TeamDevelopment_team1",
-        "projectPath": "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
-        "packagesPath": "C:\\Users\\tnoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tnoma\\Desktop\\TeamDevelopment_team1\\TeamDevelopment_team1\\obj\\",
+        "projectPath": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
+        "packagesPath": "C:\\Users\\dinesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tnoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dinesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,12 +45,22 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.79, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -70,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
