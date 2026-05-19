@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\pages\\todos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\pages\\todos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\pages\\todos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\pages\\todos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\models\\priority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\models\\priority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\models\\todoinputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\models\\todoinputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\repositories\\todorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\repositories\\todorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,8 +31,16 @@
       "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\repositories\\itodorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\teamdevelopment_team1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|solutionrelative:teamdevelopment_team1\\teamdevelopment_team1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCC61417-0A76-B4E9-8BDA-93C3169A128A}|TeamDevelopment_team1\\TeamDevelopment_team1.csproj|c:\\users\\dinesh\\documents\\github\\team-development_nagano-dinesh-noma\\teamdevelopment_team1\\teamdevelopment_team1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -25,50 +53,50 @@
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedHeight": 634,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TodoItem.cs",
-              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\TodoItem.cs",
-              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Models\\TodoItem.cs",
-              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\TodoItem.cs",
-              "RelativeToolTip": "TeamDevelopment_team1\\Models\\TodoItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T01:28:53.014Z",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Todos\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Pages\\Todos\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Todos\\Edit.cshtml",
+              "RelativeToolTip": "TeamDevelopment_team1\\Pages\\Todos\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-19T07:07:56.333Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ITodoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
-              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
-              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
-              "RelativeToolTip": "TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T01:20:52.994Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Todos\\Create.cshtml",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Pages\\Todos\\Create.cshtml",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Todos\\Create.cshtml",
+              "RelativeToolTip": "TeamDevelopment_team1\\Pages\\Todos\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-19T07:07:23.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TodoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
-              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
-              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
-              "RelativeToolTip": "TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T01:23:40.898Z",
+              "DocumentIndex": 9,
+              "Title": "TeamDevelopment_team1",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj*",
+              "RelativeToolTip": "TeamDevelopment_team1\\TeamDevelopment_team1.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-19T06:47:27.874Z",
               "EditorCaption": ""
             },
             {
@@ -81,7 +109,98 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "TeamDevelopment_team1\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T06:52:08.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "TodoItem.cs",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\TodoItem.cs",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Models\\TodoItem.cs",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\TodoItem.cs",
+              "RelativeToolTip": "TeamDevelopment_team1\\Models\\TodoItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T06:50:40.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TodoInputModel.cs",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\TodoInputModel.cs",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Models\\TodoInputModel.cs",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\TodoInputModel.cs",
+              "RelativeToolTip": "TeamDevelopment_team1\\Models\\TodoInputModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T06:49:50.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TodoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
+              "RelativeToolTip": "TeamDevelopment_team1\\Repositories\\TodoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T01:23:40.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ITodoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
+              "RelativeToolTip": "TeamDevelopment_team1\\Repositories\\ITodoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T01:20:52.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Priority.cs",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\Priority.cs",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Models\\Priority.cs",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Models\\Priority.cs",
+              "RelativeToolTip": "TeamDevelopment_team1\\Models\\Priority.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T06:49:03.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "TeamDevelopment_team1\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Pages\\Index.cshtml",
+              "RelativeToolTip": "TeamDevelopment_team1\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-19T06:52:06.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\appsettings.json",
               "RelativeDocumentMoniker": "TeamDevelopment_team1\\appsettings.json",
@@ -89,12 +208,11 @@
               "RelativeToolTip": "TeamDevelopment_team1\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-19T01:05:46.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T01:05:46.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\Program.cs",
               "RelativeDocumentMoniker": "TeamDevelopment_team1\\Program.cs",
@@ -102,19 +220,14 @@
               "RelativeToolTip": "TeamDevelopment_team1\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T00:23:46.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T00:23:46.102Z"
             }
           ]
         },
         {
-          "DockedWidth": 1167,
+          "DockedHeight": 190,
           "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
