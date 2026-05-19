@@ -1,8 +1,6 @@
-﻿using System;
-
-public class Class1
+﻿namespace TeamDevelopment_team1.Models
 {
-	public Class1()
-	{
-	}
+    public class TodoItem
+    {
+    }
 }
