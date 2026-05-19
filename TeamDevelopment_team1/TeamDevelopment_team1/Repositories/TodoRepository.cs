@@ -4,32 +4,31 @@ namespace TeamDevelopment_team1.Repositories
 {
     public class TodoRepository : ITodoRepository
     {
-        // Stores the connection string from appsettings.json.
-        // Example value:
+        // appsettings.json から接続文字列を保存します。
+        // 例:
         //   "Server=(localdb)\MSSQLLocalDB;Database=TodoAppDb;Trusted_Connection=True;"
         private readonly string _connectionString;
 
-        // Constructor — ASP.NET Core calls this and passes IConfiguration.
-        // IConfiguration reads appsettings.json automatically.
+        // コンストラクター — ASP.NET Core がこれを呼び出し、IConfiguration を渡します。
+        // IConfiguration は appsettings.json を自動的に読み取ります。
         public TodoRepository(IConfiguration config)
         {
-            // GetConnectionString("DefaultConnection") reads the value from:
+            // GetConnectionString("DefaultConnection") は次の値を読み取ります:
             //   appsettings.json → "ConnectionStrings" → "DefaultConnection"
             _connectionString = config.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException(
                     "DefaultConnection not found in appsettings.json");
         }
 
-        // ── Private helper: open a database connection ────────────────
-        // Every public method calls this to get a ready connection.
-        // "using var conn = OpenConnection()" means:
-        //   - conn.Open() is called inside here
-        //   - the "using" keyword closes and disposes the connection
-        //     automatically when the method block ends
+        // ── Private helper: データベース接続を開く ────────────────
+        // すべての public メソッドはこれを呼び出して準備済みの接続を取得します。
+        // "using var conn = OpenConnection()" の意味:
+        //   - conn.Open() はここで呼び出されます
+        //   - "using" キーワードはメソッドブロックが終了すると自動的に接続を閉じて破棄します
         private SqlConnection OpenConnection()
         {
             SqlConnection conn = new SqlConnection(_connectionString);
-            conn.Open();   // actually connects to SQL Server right now
+            conn.Open();   // 実際にSQL Serverに接続しています
             return conn;
         }
     }
