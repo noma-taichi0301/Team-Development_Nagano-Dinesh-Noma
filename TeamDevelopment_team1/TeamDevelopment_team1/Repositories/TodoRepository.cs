@@ -1,4 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
+using TeamDevelopment_team1.Models;
 
 namespace TeamDevelopment_team1.Repositories
 {
@@ -30,6 +32,92 @@ namespace TeamDevelopment_team1.Repositories
             SqlConnection conn = new SqlConnection(_connectionString);
             conn.Open();   // 実際にSQL Serverに接続しています
             return conn;
+        }
+
+        // ================================================================
+        // 機能 1 — GetAll
+        // ================================================================
+
+        // TodoItem オブジェクトのリストを返します。
+        // 各 TodoItem は Todos テーブルの 1 行に相当します。
+        // 引数;filterによって WHERE 句が決定されます。
+
+        public List<TodoItem> GetAll(string? filter)
+        {
+            // 接続を開始する — "using"で自動的に閉じられる
+            using SqlConnection conn = OpenConnection();
+
+            // SQLを構築する
+            string sql;
+
+            if (filter == "incomplete")
+            {
+                // 未完了を選択 IsCompleted = 0
+                // 優先度の高い順、次に登録が新しい順でソートする
+                sql = @"
+                SELECT *
+                FROM   Todos
+                WHERE  IsCompleted = 0
+                ORDER BY
+                    CASE Priority
+                        WHEN 3 THEN 1
+                        WHEN 2 THEN 2
+                        WHEN 1 THEN 3
+                    END,
+                    CreatedAt DESC";
+            }
+            else if (filter == "complete")
+            {
+                // 完了を選択 IsCompleted = 1
+                sql = @"
+                SELECT *
+                FROM   Todos
+                WHERE  IsCompleted = 1
+                ORDER BY CreatedAt DESC";
+            }
+            else
+            {
+                // 全リスト表示 — 未完了タスクを最初に、次に優先度順にソート
+                sql = @"
+                SELECT *
+                FROM   Todos
+                ORDER BY
+                    IsCompleted ASC,
+                    CASE Priority
+                        WHEN 3 THEN 1
+                        WHEN 2 THEN 2
+                        WHEN 1 THEN 3
+                    END,
+                    CreatedAt DESC";
+            }
+
+            //構築したSQLを実行
+            List<TodoItem> todos = conn.Query<TodoItem>(sql).ToList();
+            return todos;
+        }
+
+        // ================================================================
+        // 機能 2 — GetById
+        // ================================================================
+
+        // 指定されたIDのタスクを返します。
+        // 該当するIDがない場合はnullを返します。
+        // 編集ページで選択されたタスクの内容表示に私用します。
+        public TodoItem? GetById(int id)
+        {
+            // 接続を開始する — "using"で自動的に閉じられる
+            using SqlConnection conn = OpenConnection();
+
+            // SQLを構築する
+            string sql;
+
+            sql = @"
+                SELECT *
+                FROM   Todos
+                WHERE  Id = @value1";
+
+            TodoItem? todos = conn.QueryFirstOrDefault<TodoItem>(sql, new { Value1 = id });
+            return todos;
         }
     }
 }
