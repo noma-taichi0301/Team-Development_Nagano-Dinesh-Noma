@@ -26,6 +26,24 @@
         <input type="hidden" asp-for="TodoId" />
 
         <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <!-- Due Date and Priority side by side -->
+        <div class="field-row">
+            <div class="field">
+                <label asp-for="Input.DueDate" class="field-label">期限日</label>
+                <input asp-for="Input.DueDate" type="date" class="field-input" />
+                <span asp-validation-for="Input.DueDate" class="field-error"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="Input.Priority" class="field-label">優先度</label>
+                <select asp-for="Input.Priority" class="field-input field-select">
+                    <option value="3">🔴 高</option>
+                    <option value="2">🟡 中</option>
+                    <option value="1">🟢 低</option>
+                </select>
+                <span asp-validation-for="Input.Priority" class="field-error"></span>
+            </div>
+        </div>
 
         <!-- Task Name -->
         <div class="field">
@@ -50,7 +68,7 @@
         </div>
 
         <!-- Due Date and Priority side by side -->
-        <div class="field-row">
+     <!--   <div class="field-row">
             <div class="field">
                 <label asp-for="Input.DueDate" class="field-label">期限日</label>
                 <input asp-for="Input.DueDate" type="date" class="field-input" />
@@ -68,6 +86,7 @@
             </div>
         </div>
 
+        -->
         <!-- Buttons -->
         <div class="form-actions">
             <a asp-page="./Index" class="btn btn-outline">キャンセル</a>

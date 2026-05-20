@@ -11,61 +11,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TeamDevelopment_team1
 build_property.RootNamespace = TeamDevelopment_team1
-build_property.ProjectDir = C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\
+build_property.ProjectDir = C:\Users\dinesh\Documents\GitHub\Team TODO APP development\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1
+build_property.MSBuildProjectDirectory = C:\Users\dinesh\Documents\GitHub\Team TODO APP development\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Error.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Index.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Privacy.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/Create.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/Edit.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Todos/Create.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Todos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Todos/Edit.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Todos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Todos/Index.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Todos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/_ViewImports.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/_ViewStart.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dinesh/Documents/GitHub/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/_Layout.cshtml]
+[C:/Users/dinesh/Documents/GitHub/Team TODO APP development/Team-Development_Nagano-Dinesh-Noma/TeamDevelopment_team1/TeamDevelopment_team1/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zkq45nro83

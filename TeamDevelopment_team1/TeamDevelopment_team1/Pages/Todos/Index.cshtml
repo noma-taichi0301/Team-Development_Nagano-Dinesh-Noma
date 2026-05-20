@@ -22,8 +22,7 @@
         <div class="stat-value">@Model.StatCompleted</div>
     </div>
     <div class="stat-card @(Model.StatOverdue > 0 ? "stat-card--red" : "")">
-        <div class="stat-label">期限間近：1
-</div>
+        <div class="stat-label">期限切れ</div>
         <div class="stat-value">@Model.StatOverdue</div>
     </div>
     <div class="stat-card">
@@ -154,29 +153,29 @@ else
                             }
                         </td>
 
-                        <!-- ── 優先度バッジ ────────────────── -->
+                       <!-- ── 優先度バッジ ────────────────── -->
                         <td>
                             <span class="priority-badge @todo.PriorityBadgeClass">
                                 @todo.PriorityLabel
                             </span>
                         </td>
 
-                        <!-- ── Due date + overdue badge ──────── -->
+                        <!-- ── 期限 + 期限切れバッジ ───────────── MM/dd/yy"-->
                         <td class="td-date">
                             @if (todo.DueDate.HasValue)
                             {
                                 <span class="@(todo.IsOverdue  ? "date-overdue" :
                                     todo.IsDueToday ? "date-today" :"date-normal")">
-                                    @todo.DueDate.Value.ToString("MM/dd/yy")
+                                    @todo.DueDate.Value.ToString("yy/MM/dd")
                                 </span>
 
                                 @if (todo.IsOverdue)
                                 {
-                                    <span class="date-badge date-badge--overdue">Overdue</span>
+                                    <span class="date-badge date-badge--overdue">期限切れ</span>
                                 }
                                 else if (todo.IsDueToday)
                                 {
-                                    <span class="date-badge date-badge--today">Today</span>
+                                    <span class="date-badge date-badge--today">今日</span>
                                 }
                             }
                             else
@@ -185,7 +184,7 @@ else
                             }
                         </td>
 
-                        <!-- ── Edit + Delete buttons ─────────── -->
+                        <!-- ── 編集 + 削除ボタン ─────────── -->
                         <td class="td-actions">
                             <a asp-page="./Edit"
                                    asp-route-id="@todo.Id"
@@ -195,7 +194,7 @@ else
 
                             <form method="post"
                                   style="display:inline"
-                                  onsubmit="return confirm('Delete this task? It cannot be undone.')">
+                                  onsubmit="return confirm('このタスクを削除しますか？元に戻すことはできません。')">
                                 <input type="hidden" name="id" value="@todo.Id" />
                                 <button type="submit"
                                         asp-page-handler="Delete"

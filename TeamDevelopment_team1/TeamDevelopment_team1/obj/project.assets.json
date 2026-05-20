@@ -813,11 +813,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
+      "projectUniqueName": "C:\\Users\\dinesh\\Documents\\GitHub\\Team TODO APP development\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
       "projectName": "TeamDevelopment_team1",
-      "projectPath": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
+      "projectPath": "C:\\Users\\dinesh\\Documents\\GitHub\\Team TODO APP development\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\TeamDevelopment_team1.csproj",
       "packagesPath": "C:\\Users\\dinesh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dinesh\\Documents\\GitHub\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\obj\\",
+      "outputPath": "C:\\Users\\dinesh\\Documents\\GitHub\\Team TODO APP development\\Team-Development_Nagano-Dinesh-Noma\\TeamDevelopment_team1\\TeamDevelopment_team1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
