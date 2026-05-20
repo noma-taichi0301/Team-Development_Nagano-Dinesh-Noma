@@ -96,5 +96,28 @@ namespace TeamDevelopment_team1.Repositories
             return todos;
         }
 
+        // ================================================================
+        // 機能 2 — GetById
+        // ================================================================
+
+        // 指定されたIDのタスクを返します。
+        // 該当するIDがない場合はnullを返します。
+        // 編集ページで選択されたタスクの内容表示に私用します。
+        public TodoItem? GetById(int id)
+        {
+            // 接続を開始する — "using"で自動的に閉じられる
+            using SqlConnection conn = OpenConnection();
+
+            // SQLを構築する
+            string sql;
+
+            sql = @"
+                SELECT *
+                FROM   Todos
+                WHERE  Id = @value1";
+
+            TodoItem? todos = conn.QueryFirstOrDefault<TodoItem>(sql, new { Value1 = id });
+            return todos;
+        }
     }
 }
