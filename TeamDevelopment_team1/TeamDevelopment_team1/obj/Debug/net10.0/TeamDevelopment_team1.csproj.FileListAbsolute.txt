@@ -56,7 +56,6 @@ C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelop
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\scopedcss\bundle\TeamDevelopment_team1.styles.css
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\scopedcss\projectbundle\TeamDevelopment_team1.bundle.scp.css
-C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\compressed\uw37x0ldui-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\compressed\bcujti9ftl-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\compressed\er9w86xnm6-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\compressed\k7uajswoz2-{0}-t1cqhe9u97-t1cqhe9u97.gz
@@ -132,3 +131,4 @@ C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelop
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.pdb
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\TeamDevelopment_team1.genruntimeconfig.cache
 C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\ref\TeamDevelopment_team1.dll
+C:\Users\dinesh\Documents\GitHub\Team-Development_Nagano-Dinesh-Noma\TeamDevelopment_team1\TeamDevelopment_team1\obj\Debug\net10.0\compressed\uw37x0ldui-{0}-cuie5fwx79-cuie5fwx79.gz

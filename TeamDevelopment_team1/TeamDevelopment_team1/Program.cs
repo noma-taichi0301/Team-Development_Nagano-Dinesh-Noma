@@ -18,14 +18,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-
+app.UseStaticFiles();   // serve files from wwwroot/ (CSS, JS, images)
 app.UseRouting();
-
 app.UseAuthorization();
+app.MapRazorPages();
 
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+// Visiting "/" redirects automatically to the task list
+app.MapGet("/", () => Results.Redirect("/Todos"));
 
 app.Run();

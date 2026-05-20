@@ -1,4 +1,100 @@
 ﻿@page
 @model TeamDevelopment_team1.Pages.Todos.CreateModel
+@using TeamDevelopment_team1.Models
 @{
+    ViewData["Title"] = "New Task";
+}
+
+<div class="form-container">
+
+    <!-- Header -->
+    <div class="form-header">
+        <a asp-page="./Index" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+            リストに戻る
+        </a>
+        <h1 class="form-title">新しいタスク</h1>
+    </div>
+
+    <!-- Form -->
+    <form method="post" class="task-form">
+
+        <!-- asp-validation-summary shows ModelOnly errors (not field errors) -->
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+        <!-- Task Name -->
+        <div class="field">
+            <label asp-for="Input.Title" class="field-label">
+               タスク名 <span class="required">*</span>
+            </label>
+            <!-- asp-for wires up the name, id, and value automatically -->
+            <input asp-for="Input.Title"
+                   class="field-input"
+                   placeholder="何をすべきか?"
+                   maxlength="150"
+                   autocomplete="off"
+                   autofocus />
+            <!-- asp-validation-for shows the error message for this field -->
+            <span asp-validation-for="Input.Title" class="field-error"></span>
+            <div class="field-hint" id="char-hint">0 / 150 characters</div>
+        </div>
+
+        <!-- Details -->
+        <div class="field">
+            <label asp-for="Input.Detail" class="field-label">タスク詳細</label>
+            <textarea asp-for="Input.Detail"
+                      class="field-input field-textarea"
+                      placeholder="追加の詳細を入力してください（任意）..."
+                      maxlength="1000"
+                      rows="3"></textarea>
+            <span asp-validation-for="Input.Detail" class="field-error"></span>
+        </div>
+
+        <!-- Due Date and Priority side by side -->
+        <div class="field-row">
+            <div class="field">
+                <label asp-for="Input.DueDate" class="field-label">期日</label>
+                <input asp-for="Input.DueDate" type="date" class="field-input" />
+                <span asp-validation-for="Input.DueDate" class="field-error"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="Input.Priority" class="field-label">優先度</label>
+                <select asp-for="Input.Priority" class="field-input field-select">
+                    <option value="3">🔴 高</option>
+                    <option value="2" selected>🟡 中</option>
+                    <option value="1">🟢 低</option>
+                </select>
+                <span asp-validation-for="Input.Priority" class="field-error"></span>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+            <a asp-page="./Index" class="btn btn-outline">キャンセル</a>
+            <button type="submit" class="btn btn-primary">タスク追加</button>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Live character counter — updates as the user types
+        var titleInput = document.querySelector('[name="Input.Title"]');
+        var charHint   = document.getElementById('char-hint');
+        if (titleInput && charHint) {
+            titleInput.addEventListener('input', function () {
+                var len = titleInput.value.length;
+                charHint.textContent = len + ' / 150 characters';
+                charHint.style.color = len >= 135 ? '#dc2626' : '';
+            });
+        }
+    </script>
 }

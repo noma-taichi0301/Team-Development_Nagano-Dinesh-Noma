@@ -35,7 +35,7 @@ namespace TeamDevelopment_team1.Repositories
         }
 
         // ================================================================
-        // 機能 1 — GetAll
+        // 機能1 + 2 — すべて取得
         // ================================================================
 
         // TodoItem オブジェクトのリストを返します。
@@ -108,16 +108,152 @@ namespace TeamDevelopment_team1.Repositories
             // 接続を開始する — "using"で自動的に閉じられる
             using SqlConnection conn = OpenConnection();
 
-            // SQLを構築する
-            string sql;
+            // @Id は Dapper のパラメータです。
+            // Dapper は @Id を id の値で安全に置き換えます。
+            // これにより SQL インジェクション攻撃を防ぎます。文字列連結は絶対に使用しないでください。
+            string sql = "SELECT * FROM Todos WHERE Id = @Id";
 
-            sql = @"
-                SELECT *
-                FROM   Todos
-                WHERE  Id = @value1";
 
-            TodoItem? todos = conn.QueryFirstOrDefault<TodoItem>(sql, new { Value1 = id });
+
+            // QueryFirstOrDefault<TodoItem>:
+            // - SQLを実行します
+            // - 行が見つかった場合 → TodoItem に値を設定し、返します
+            // - 行が見つからなかった場合 → null を返します（例外はスローしません）
+            TodoItem? todos = conn.QueryFirstOrDefault<TodoItem>(sql, new { Id = id });
             return todos;
+        }
+
+        // ================================================================
+        // 機能3 — 作成(CREATE)
+        // ================================================================
+        // Todosテーブルに新しい行を1つ挿入します。
+        // 何も返さず、データベースに保存するだけです。
+        public void Create(TodoItem todo)
+        {
+            using SqlConnection conn = OpenConnection();
+
+            // Id は挿入しません — SQL が自動生成します (IDENTITY)
+            // CreatedAt は挿入しません — SQL の DEFAULT GETDATE() が設定します
+            // IsCompleted は新しいタスクでは常に 0 です
+            string sql = @"
+            INSERT INTO Todos (Title, Detail, DueDate, Priority, IsCompleted)
+            VALUES            (@Title, @Detail, @DueDate, @Priority, 0)";
+
+            // new { ... } は匿名オブジェクトです。
+            // Dapper はそのプロパティを読み取り、SQL の @Parameters と照合します。
+            // (int)todo.Priority は列挙値を int 型にキャストします。
+            // Priority.High → 3
+            // Priority.Mid → 2
+            // Priority.Low → 1
+            conn.Execute(sql, new
+            {
+                todo.Title,
+                todo.Detail,
+                todo.DueDate,
+                Priority = (int)todo.Priority
+            });
+        }
+
+        // ================================================================
+        // / 機能 4 — 更新(UPDATE
+        // ================================================================
+        // Overwrites the editable columns of an existing row.
+        // The WHERE Id = @Id makes sure only that one row is changed.
+        public void Update(TodoItem todo)
+        {
+            using SqlConnection conn = OpenConnection();
+
+            // Only update fields the user can edit on the form.
+            // IsCompleted is NOT here — the toggle button handles that separately.
+            // CreatedAt is NOT here — it should never change.
+            string sql = @"
+            UPDATE Todos
+            SET    Title    = @Title,
+                   Detail   = @Detail,
+                   DueDate  = @DueDate,
+                   Priority = @Priority
+            WHERE  Id = @Id";
+
+            conn.Execute(sql, new
+            {
+                todo.Title,
+                todo.Detail,
+                todo.DueDate,
+                Priority = (int)todo.Priority,
+                todo.Id          // this goes into WHERE Id = @Id
+            });
+        }
+
+        // ================================================================
+        // FEATURE 5 — ToggleStatus
+        // ================================================================
+        // Flips IsCompleted between 0 and 1 with one SQL statement.
+        // No need to read the current value first.
+        public void ToggleStatus(int id)
+        {
+            using SqlConnection conn = OpenConnection();
+
+            // ~ is the SQL Server bitwise NOT operator.
+            // On a BIT column it works like this:
+            //   current value = 0  →  ~0 = 1  (task marked complete)
+            //   current value = 1  →  ~1 = 0  (task marked incomplete)
+            string sql = "UPDATE Todos SET IsCompleted = ~IsCompleted WHERE Id = @Id";
+
+            conn.Execute(sql, new { Id = id });
+        }
+
+        // ================================================================
+        // FEATURE 6 — Delete
+        // ================================================================
+        // Permanently removes a row. Cannot be undone.
+        // The JS confirm() dialog in the view asks "are you sure?" first.
+        public void Delete(int id)
+        {
+            using SqlConnection conn = OpenConnection();
+
+            string sql = "DELETE FROM Todos WHERE Id = @Id";
+
+            conn.Execute(sql, new { Id = id });
+        }
+
+        // ================================================================
+        // GetStats
+        // ================================================================
+        // Returns three numbers for the dashboard stat cards.
+        // Uses a named tuple so we can return multiple values
+        // without creating a separate class.
+        public (int Total, int Completed, int Overdue) GetStats()
+        {
+            using SqlConnection conn = OpenConnection();
+
+            string sql = @"
+            SELECT
+                COUNT(*) AS Total,
+
+                SUM(CAST(IsCompleted AS INT)) AS Completed,
+
+                SUM(
+                    CASE
+                        WHEN IsCompleted = 0
+                         AND DueDate     IS NOT NULL
+                         AND CAST(DueDate AS DATE) < CAST(GETDATE() AS DATE)
+                        THEN 1
+                        ELSE 0
+                    END
+                ) AS Overdue
+
+            FROM Todos";
+
+            // QueryFirst returns one row as a dynamic object.
+            // dynamic means we can read .Total, .Completed, .Overdue
+            // without declaring a class for it.
+            dynamic row = conn.QueryFirst(sql);
+
+            int total = (int)(row.Total ?? 0);
+            int completed = (int)(row.Completed ?? 0);
+            int overdue = (int)(row.Overdue ?? 0);
+
+            return (total, completed, overdue);
         }
     }
 }
