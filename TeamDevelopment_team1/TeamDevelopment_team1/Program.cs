@@ -18,12 +18,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseStaticFiles();   // serve files from wwwroot/ (CSS, JS, images)
+app.UseStaticFiles();   // wwwroot/ からファイル（CSS、JS、画像）を配信する
 app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages();
 
-// Visiting "/" redirects automatically to the task list
+// // "/" にアクセスすると、自動的にタスクリストにリダイレクトされます。
 app.MapGet("/", () => Results.Redirect("/Todos"));
 
 app.Run();
