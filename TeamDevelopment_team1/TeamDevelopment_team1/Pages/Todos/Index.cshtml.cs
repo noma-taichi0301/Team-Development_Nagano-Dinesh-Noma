@@ -7,9 +7,9 @@ namespace TeamDevelopment_team1.Pages.Todos
 {
     public class IndexModel : PageModel
     {
-        // _repo is injected by ASP.NET Core (set up in Program.cs)
-        // The PageModel never creates a TodoRepository itself.
-        // It just uses the interface so it doesn't care which class is behind it.
+        // _repo は ASP.NET Core によって注入されます (Program.cs で設定)。
+        // PageModel は TodoRepository を自身で作成することはありません。
+        // インターフェースを使用するだけなので、背後にあるクラスが何であるかは気にしません。
         private readonly ITodoRepository _repo;
 
         public IndexModel(ITodoRepository repo)
@@ -17,10 +17,10 @@ namespace TeamDevelopment_team1.Pages.Todos
             _repo = repo;
         }
 
-        // The list of tasks shown in the table on the page
+        // ページ上のテーブルに表示されるタスクのリスト
         public List<TodoItem> Todos { get; set; } = new List<TodoItem>();
 
-        // The three numbers shown in the stat cards at the top
+        // 上部の統計カードに表示される3つの数字
         public int StatTotal { get; set; }
         public int StatCompleted { get; set; }
         public int StatOverdue { get; set; }
