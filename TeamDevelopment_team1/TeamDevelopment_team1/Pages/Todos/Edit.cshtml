@@ -1,11 +1,11 @@
 ﻿@page
 @model TeamDevelopment_team1.Pages.Todos.EditModel
 @{
-    ViewData["Title"] = "Edit Task";
+    ViewData["Title"] = "タスクを編集";
 }
 <div class="form-container">
 
-    <!-- Header -->
+    <!-- ヘッダ -->
     <div class="form-header">
         <a asp-page="./Index" class="back-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -21,13 +21,13 @@
     <!-- Form -->
     <form method="post" class="task-form">
 
-        <!-- IMPORTANT: hidden field carries TodoId through the POST -->
-        <!-- Without this, OnPost() would not know which row to UPDATE -->
+        <!-- 重要: 非表示フィールドはPOSTを通じてTodoIdを転送します -->
+        <!--これがないと、OnPost() はどの行を更新すればよいかわかりません。 -->
         <input type="hidden" asp-for="TodoId" />
 
         <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
-        <!-- Due Date and Priority side by side -->
+        <!-- 期限日と優先度を横並びに表示 -->
         <div class="field-row">
             <div class="field">
                 <label asp-for="Input.DueDate" class="field-label">期限日</label>
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <!-- Task Name -->
+        <!-- タスク名 -->
         <div class="field">
             <label asp-for="Input.Title" class="field-label">
                 タスク名 <span class="required">*</span>
@@ -58,7 +58,7 @@
             <span asp-validation-for="Input.Title" class="field-error"></span>
         </div>
 
-        <!-- Details -->
+        <!-- 詳細 -->
         <div class="field">
             <label asp-for="Input.Detail" class="field-label">詳細</label>
             <textarea asp-for="Input.Detail"
@@ -88,7 +88,7 @@
         </div>
 
         -->
-        <!-- Buttons -->
+        <!-- ボタン -->
         <div class="form-actions">
             <a asp-page="./Index" class="btn btn-outline">キャンセル</a>
             <button type="submit" class="btn btn-primary">変更を保存</button>

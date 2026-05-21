@@ -19,7 +19,7 @@ namespace TeamDevelopment_team1.Repositories
             //   appsettings.json → "ConnectionStrings" → "DefaultConnection"
             _connectionString = config.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException(
-                    "DefaultConnection not found in appsettings.json");
+                    "appsettings.json に DefaultConnection が見つかりません");
         }
 
         // ── Private helper: データベース接続を開く ────────────────
