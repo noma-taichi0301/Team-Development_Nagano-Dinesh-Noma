@@ -299,8 +299,8 @@ a {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
+    table-layout: fixed;
 }
-
     .todo-table thead tr {
         background: var(--surface2);
         border-bottom: 1px solid var(--border);
@@ -382,15 +382,20 @@ a {
     }
 
 /* ── タスクタイトルセル ─────────────────────────────────────── */
+
 .td-title {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    overflow: hidden; /* hide overflow */
 }
-
 .task-name {
     font-weight: 500;
     color: var(--text);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .task-name--done {
@@ -401,10 +406,10 @@ a {
 .task-detail {
     font-size: 12px;
     color: var(--text-muted);
-    overflow: hidden;
+    display: block;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 380px;
 }
 
 /* ── 優先バッジ ──────────────────────────────────────── */
