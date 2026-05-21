@@ -41,6 +41,9 @@ namespace TeamDevelopment_team1.Pages.Todos
         // ページヘッダーに表示されるタイトル: "Editing: Buy groceries"
         public string TaskTitle { get; set; } = "";
 
+        // ── NEW ───────────────────────────────────────────────
+        public List<User> Users { get; set; } = new List<User>();
+
         // ── OnGet ─────────────────────────────────────────────────────
         // URL は /Todos/Edit/5  →  id = 5
         // データベースからそのタスクを読み込み、フォームにそのデータを事前に入力します。
@@ -64,6 +67,9 @@ namespace TeamDevelopment_team1.Pages.Todos
                 return NotFound();   // HTTP 404 を返します
             }
 
+            // ── NEW: load users for dropdown ──────────────────
+            Users = _repo.GetAllUsers();
+
             // 非表示フィールドに Id を保持するため、フォームに埋め込みます
             TodoId = todo.Id;
 
@@ -76,7 +82,8 @@ namespace TeamDevelopment_team1.Pages.Todos
                 Title = todo.Title,
                 Detail = todo.Detail,
                 DueDate = todo.DueDate,
-                Priority = todo.Priority
+                Priority = todo.Priority,
+                AssigneeId = todo.AssigneeId
             };
 
             return Page();
@@ -96,6 +103,7 @@ namespace TeamDevelopment_team1.Pages.Todos
 
             if (!ModelState.IsValid)
             {
+                Users = _repo.GetAllUsers();    // ← NEW
                 return Page();   // 検証エラーを含むフォームを再度表示します
             }
 
@@ -107,7 +115,8 @@ namespace TeamDevelopment_team1.Pages.Todos
                                ? null
                                : Input.Detail.Trim(),
                 DueDate = Input.DueDate,
-                Priority = Input.Priority
+                Priority = Input.Priority,
+                AssigneeId = Input.AssigneeId
             };
 
             try
@@ -118,6 +127,7 @@ namespace TeamDevelopment_team1.Pages.Todos
             catch (Exception ex)
             {
                 ModelState.AddModelError("", "タスクを更新できませんでした： " + ex.Message);
+                Users = _repo.GetAllUsers();    // ← NEW
                 return Page();
             }
         }

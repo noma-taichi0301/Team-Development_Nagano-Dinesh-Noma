@@ -26,6 +26,15 @@
         public bool IsCompleted { get; set; }
         public DateTime CreatedAt { get; set; }
 
+
+        /* ── NEW: Assignee ───────────────────────────────────── */
+    // Stores the foreign key value from the DB column
+    public int? AssigneeId { get; set; }
+
+        // Stores the name from the JOIN — NOT a DB column
+        // Dapper fills this from "u.Name AS AssigneeName" in the SQL
+        public string? AssigneeName { get; set; }
+
         // ── 計算プロパティ ───────────────────────────────────────
         // これらは列ではありません。上記の値から動的に計算されます。
         // Razor ビューは、これらの値を使用して、

@@ -21,11 +21,16 @@ namespace TeamDevelopment_team1.Pages.Todos
         [BindProperty]
         public TodoInputModel Input { get; set; } = new TodoInputModel();
 
+        // ── NEW: list of users for the dropdown ───────────────
+        public List<User> Users { get; set; } = new List<User>();
+
         // ── OnGet ─────────────────────────────────────────────────────
         // ブラウザが「タスクを追加」をクリックしたときにGETリクエストを送信します。
         // 空のフォームをレンダリングするだけで、DBから読み込む必要はありません。
         public IActionResult OnGet()
         {
+            // ── NEW: load users so the dropdown has options ───
+            Users = _repo.GetAllUsers();
             return Page();
         }
 
@@ -48,6 +53,8 @@ namespace TeamDevelopment_team1.Pages.Todos
             // （[Required]、[StringLength]、または上で行った手動チェックのいずれか）
             if (!ModelState.IsValid)
             {
+                // ── NEW: reload users on validation failure ───
+                Users = _repo.GetAllUsers();
                 // 同じページを返します — Razor はエラーメッセージを表示します
                 return Page();
             }
@@ -60,7 +67,8 @@ namespace TeamDevelopment_team1.Pages.Todos
                                ? null
                                : Input.Detail.Trim(),
                 DueDate = Input.DueDate,
-                Priority = Input.Priority
+                Priority = Input.Priority,
+                AssigneeId = Input.AssigneeId   // ← NEW
             };
 
             try
@@ -76,6 +84,7 @@ namespace TeamDevelopment_team1.Pages.Todos
             {
                 // 例外でクラッシュさせず、フォーム上にエラーを表示します
                 ModelState.AddModelError("", "タスクを保存できませんでした: " + ex.Message);
+                Users = _repo.GetAllUsers();    // ← NEW: reload on error
                 return Page();
             }
         }

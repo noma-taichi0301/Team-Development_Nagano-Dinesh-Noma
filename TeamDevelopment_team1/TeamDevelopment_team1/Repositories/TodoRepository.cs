@@ -52,49 +52,43 @@ namespace TeamDevelopment_team1.Repositories
 
             if (filter == "incomplete")
             {
-                // 未完了を選択 IsCompleted = 0
-                // 優先度の高い順、次に登録が新しい順でソートする
-                sql = @"
-                SELECT *
-                FROM   Todos
-                WHERE  IsCompleted = 0
-                ORDER BY
-                    CASE Priority
-                        WHEN 3 THEN 1
-                        WHEN 2 THEN 2
-                        WHEN 1 THEN 3
-                    END,
-                    CreatedAt DESC";
+                sql = @"	
+            SELECT t.*, u.Name AS AssigneeName	
+            FROM   Todos t	
+            LEFT JOIN Users u ON t.AssigneeId = u.Id	
+            WHERE  t.IsCompleted = 0	
+            ORDER BY	
+                CASE t.Priority WHEN 3 THEN 1	
+                                WHEN 2 THEN 2	
+                                WHEN 1 THEN 3 END,	
+                t.CreatedAt DESC";
             }
             else if (filter == "complete")
             {
-                // 完了を選択 IsCompleted = 1
-                sql = @"
-                SELECT *
-                FROM   Todos
-                WHERE  IsCompleted = 1
-                ORDER BY CreatedAt DESC";
+                sql = @"	
+            SELECT t.*, u.Name AS AssigneeName	
+            FROM   Todos t	
+            LEFT JOIN Users u ON t.AssigneeId = u.Id	
+            WHERE  t.IsCompleted = 1	
+            ORDER BY t.CreatedAt DESC";
             }
             else
             {
-                // 全リスト表示 — 未完了タスクを最初に、次に優先度順にソート
-                sql = @"
-                SELECT *
-                FROM   Todos
-                ORDER BY
-                    IsCompleted ASC,
-                    CASE Priority
-                        WHEN 3 THEN 1
-                        WHEN 2 THEN 2
-                        WHEN 1 THEN 3
-                    END,
-                    CreatedAt DESC";
+                sql = @"	
+            SELECT t.*, u.Name AS AssigneeName	
+            FROM   Todos t	
+            LEFT JOIN Users u ON t.AssigneeId = u.Id	
+            ORDER BY	
+                t.IsCompleted ASC,	
+                CASE t.Priority WHEN 3 THEN 1	
+                                WHEN 2 THEN 2	
+                                WHEN 1 THEN 3 END,	
+                t.CreatedAt DESC";
             }
 
-            //構築したSQLを実行
-            List<TodoItem> todos = conn.Query<TodoItem>(sql).ToList();
-            return todos;
+            return conn.Query<TodoItem>(sql).ToList();
         }
+
 
         // ================================================================
         // 機能 2 — GetById
@@ -105,22 +99,16 @@ namespace TeamDevelopment_team1.Repositories
         // 編集ページで選択されたタスクの内容表示に私用します。
         public TodoItem? GetById(int id)
         {
-            // 接続を開始する — "using"で自動的に閉じられる
             using SqlConnection conn = OpenConnection();
 
-            // @Id は Dapper のパラメータです。
-            // Dapper は @Id を id の値で安全に置き換えます。
-            // これにより SQL インジェクション攻撃を防ぎます。文字列連結は絶対に使用しないでください。
-            string sql = "SELECT * FROM Todos WHERE Id = @Id";
+            string sql = @"	
+        SELECT t.*, u.Name AS AssigneeName	
+        FROM   Todos t	
+        LEFT JOIN Users u ON t.AssigneeId = u.Id	
+        WHERE  t.Id = @Id";
 
+            return conn.QueryFirstOrDefault<TodoItem>(sql, new { Id = id });
 
-
-            // QueryFirstOrDefault<TodoItem>:
-            // - SQLを実行します
-            // - 行が見つかった場合 → TodoItem に値を設定し、返します
-            // - 行が見つからなかった場合 → null を返します（例外はスローしません）
-            TodoItem? todos = conn.QueryFirstOrDefault<TodoItem>(sql, new { Id = id });
-            return todos;
         }
 
         // ================================================================
@@ -132,25 +120,18 @@ namespace TeamDevelopment_team1.Repositories
         {
             using SqlConnection conn = OpenConnection();
 
-            // Id は挿入しません — SQL が自動生成します (IDENTITY)
-            // CreatedAt は挿入しません — SQL の DEFAULT GETDATE() が設定します
-            // IsCompleted は新しいタスクでは常に 0 です
-            string sql = @"
-            INSERT INTO Todos (Title, Detail, DueDate, Priority, IsCompleted)
-            VALUES            (@Title, @Detail, @DueDate, @Priority, 0)";
+            string sql = @"	
+        INSERT INTO Todos (Title, Detail, DueDate, Priority, IsCompleted, AssigneeId)	
+        VALUES            (@Title, @Detail, @DueDate, @Priority, 0, @AssigneeId)";
 
-            // new { ... } は匿名オブジェクトです。
-            // Dapper はそのプロパティを読み取り、SQL の @Parameters と照合します。
-            // (int)todo.Priority は列挙値を int 型にキャストします。
-            // Priority.High → 3
-            // Priority.Mid → 2
-            // Priority.Low → 1
             conn.Execute(sql, new
             {
                 todo.Title,
                 todo.Detail,
                 todo.DueDate,
-                Priority = (int)todo.Priority
+                Priority = (int)todo.Priority,
+                todo.AssigneeId      // null is fine — SQL allows NULL here	
+
             });
         }
 
@@ -217,7 +198,7 @@ namespace TeamDevelopment_team1.Repositories
         }
 
         // ================================================================
-        // GetStats州を取得する  
+        // GetStats_状態を取得する  
         // ================================================================
         // ダッシュボードの統計カード用に3つの数値を返します。
         // 名前付きタプルを使用することで、複数の値を返すことができます。
@@ -254,6 +235,13 @@ namespace TeamDevelopment_team1.Repositories
             int overdue = (int)(row.Overdue ?? 0);
 
             return (total, completed, overdue);
+        }
+
+        public List<User> GetAllUsers()
+        {
+            using SqlConnection conn = OpenConnection();
+
+            return conn.Query<User>("SELECT * FROM Users ORDER BY Name").ToList();
         }
     }
 }
