@@ -53,7 +53,7 @@
             }
         }
 
-        // Text label shown in the Priority column of the table
+        //テーブルの優先度列に表示されるテキストラベル
         public string PriorityLabel
         {
             get
@@ -64,7 +64,7 @@
             }
         }
 
-        // CSS class name for the coloured priority badge
+        // 色付きの優先度バッジのCSSクラス名
         public string PriorityBadgeClass
         {
             get

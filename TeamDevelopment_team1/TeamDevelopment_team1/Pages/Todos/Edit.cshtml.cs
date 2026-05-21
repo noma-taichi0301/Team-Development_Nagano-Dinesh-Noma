@@ -28,49 +28,49 @@ namespace TeamDevelopment_team1.Pages.Todos
             _repo = repo;
         }
 
-        // The form input fields (Title, Detail, DueDate, Priority)
+        // フォーム入力フィールド (Title, Detail, DueDate, Priority)
         [BindProperty]
         public TodoInputModel Input { get; set; } = new TodoInputModel();
 
-        // The Id of the task being edited.
-        // [BindProperty] keeps this value in a hidden field so the POST
-        // handler knows which row to UPDATE.
+        //編集中のタスクのID。
+        // [BindProperty] この値を非表示フィールドに保持するため、POST は
+        //ハンドラーは更新すべき行を認識しています。
         [BindProperty]
         public int TodoId { get; set; }
 
-        // Shown in the page header: "Editing: Buy groceries"
+        // ページヘッダーに表示されるタイトル: "Editing: Buy groceries"
         public string TaskTitle { get; set; } = "";
 
         // ── OnGet ─────────────────────────────────────────────────────
-        // The URL is /Todos/Edit/5  →  id = 5
-        // We load that task from DB and pre-fill the form with its data.
+        // URL は /Todos/Edit/5  →  id = 5
+        // データベースからそのタスクを読み込み、フォームにそのデータを事前に入力します。
         public IActionResult OnGet(int id)
         {
-            // Reject obviously invalid Ids before touching the database
-            // This handles URLs like /Todos/Edit/-1 or /Todos/Edit/0
+            // 無効な Id をデータベースに触れる前に拒否します
+            // これにより /Todos/Edit/-1 や /Todos/Edit/0 のような URL を処理します
             if (id <= 0)
             {
-                return NotFound();   // returns HTTP 404
+                return NotFound();   // HTTP 404 を返します
             }
 
-            // Ask the repository for the task with this Id
-            // GetById returns null if no row has that Id
+            // リポジトリにこの Id のタスクを問い合わせます
+            // GetById は、その Id の行が存在しない場合は null を返します
             TodoItem? todo = _repo.GetById(id);
 
-            // If null: the Id doesn't exist in the DB
-            // This handles URLs like /Todos/Edit/99999
+            // null の場合: DB にその Id は存在しません
+            // これにより /Todos/Edit/99999 のような URL を処理します
             if (todo == null)
             {
-                return NotFound();   // returns HTTP 404
+                return NotFound();   // HTTP 404 を返します
             }
 
-            // Store the Id so it goes into the hidden field on the form
+            // 非表示フィールドに Id を保持するため、フォームに埋め込みます
             TodoId = todo.Id;
 
-            // Store the title for the page header
+            // ページヘッダーに表示されるタイトルを保持します
             TaskTitle = todo.Title;
 
-            // Pre-fill the form with the existing values
+            //既存の値でフォームを事前入力する
             Input = new TodoInputModel
             {
                 Title = todo.Title,
@@ -83,25 +83,25 @@ namespace TeamDevelopment_team1.Pages.Todos
         }
 
         // ── OnPost ────────────────────────────────────────────────────
-        // Called when the user submits the edit form.
-        // TodoId comes from the hidden field — it tells us which row to update.
+        // ユーザーが編集フォームを送信したときに呼び出されます。
+        // TodoId は非表示フィールドから取得されます — どの行を更新するかを示します。
         public IActionResult OnPost()
         {
             if (string.IsNullOrWhiteSpace(Input.Title))
             {
                 ModelState.AddModelError(
                     nameof(Input.Title),
-                    "Task name cannot be blank.");
+                    "タスク名は空欄にすることはできません");
             }
 
             if (!ModelState.IsValid)
             {
-                return Page();   // show form again with validation errors
+                return Page();   // 検証エラーを含むフォームを再度表示します
             }
 
             TodoItem updatedTodo = new TodoItem
             {
-                Id = TodoId,   // which row to UPDATE
+                Id = TodoId,   // どの行を更新するか
                 Title = Input.Title.Trim(),
                 Detail = string.IsNullOrWhiteSpace(Input.Detail)
                                ? null
@@ -117,7 +117,7 @@ namespace TeamDevelopment_team1.Pages.Todos
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "Could not update task: " + ex.Message);
+                ModelState.AddModelError("", "タスクを更新できませんでした： " + ex.Message);
                 return Page();
             }
         }

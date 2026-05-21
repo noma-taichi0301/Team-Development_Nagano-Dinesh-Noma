@@ -14,45 +14,45 @@ namespace TeamDevelopment_team1.Pages.Todos
             _repo = repo;
         }
 
-        // [BindProperty] tells ASP.NET Core to fill this object
-        // from the form fields when the user submits the form.
-        // Each form field name must match the property path:
+        // [BindProperty] ASP.NET Coreにこのオブジェクトを埋めるように指示します
+        // ユーザーがフォームを送信した際に、フォームフィールドから取得されます。
+        // 各フォームフィールド名はプロパティパスと一致する必要があります。
         //   <input name="Input.Title" />  →  Input.Title
         [BindProperty]
         public TodoInputModel Input { get; set; } = new TodoInputModel();
 
         // ── OnGet ─────────────────────────────────────────────────────
-        // The browser sends a GET request when the user clicks "Add Task".
-        // We just render the empty form — nothing to load from DB.
+        // ブラウザが「タスクを追加」をクリックしたときにGETリクエストを送信します。
+        // 空のフォームをレンダリングするだけで、DBから読み込む必要はありません。
         public IActionResult OnGet()
         {
             return Page();
         }
 
         // ── OnPost ────────────────────────────────────────────────────
-        // The browser sends a POST request when the user submits the form.
-        // Steps: validate → build TodoItem → save → redirect
+        // ブラウザがフォームを送信したときにPOSTリクエストが送信されます。
+        // 手順: 検証 → TodoItemの作成 → 保存 → リダイレクト
         public IActionResult OnPost()
         {
-            // Extra check: [Required] catches null but NOT whitespace-only
-            // e.g. a title of "     " (5 spaces) passes [Required]
-            // so we add this manual check
+            // 追加のチェック: [Required] は null をキャッチしますが、空白のみはキャッチしません
+            // 例: タイトルが "     " (5つのスペース) の場合、[Required] は通過します
+            // そのため、この手動チェックを追加します
             if (string.IsNullOrWhiteSpace(Input.Title))
             {
                 ModelState.AddModelError(
                     nameof(Input.Title),
-                    "Task name cannot be blank or spaces only.");
+                    "タスク名は空白またはスペースのみでは入力できません。");
             }
 
-            // ModelState.IsValid is false if ANY validation attribute failed
-            // ([Required], [StringLength], or our manual check above)
+            // いずれかの検証属性が失敗した場合、ModelState.IsValid は false になります
+            // （[Required]、[StringLength]、または上で行った手動チェックのいずれか）
             if (!ModelState.IsValid)
             {
-                // Return the same page — Razor will show the error messages
+                // 同じページを返します — Razor はエラーメッセージを表示します
                 return Page();
             }
 
-            // Build a TodoItem from the form data
+            // フォームデータから TodoItem を作成します
             TodoItem todo = new TodoItem
             {
                 Title = Input.Title.Trim(),
@@ -65,17 +65,17 @@ namespace TeamDevelopment_team1.Pages.Todos
 
             try
             {
-                // Save to database — synchronous, no await
+                // データベースに保存します — 同期的（await なし）
                 _repo.Create(todo);
 
-                // After a successful save, redirect to the list page
-                // (PRG pattern: prevents duplicate submission on F5)
+                // 保存に成功したら一覧ページへリダイレクトします
+                // （PRG パターン: F5 による重複送信を防ぎます）
                 return RedirectToPage("./Index");
             }
             catch (Exception ex)
             {
-                // Show the error on the form instead of crashing
-                ModelState.AddModelError("", "Could not save task: " + ex.Message);
+                // 例外でクラッシュさせず、フォーム上にエラーを表示します
+                ModelState.AddModelError("", "タスクを保存できませんでした: " + ex.Message);
                 return Page();
             }
         }

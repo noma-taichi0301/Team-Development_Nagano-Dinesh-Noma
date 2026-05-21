@@ -33,16 +33,16 @@ namespace TeamDevelopment_team1.Pages.Todos
         public string? Filter { get; set; }
 
         // ── OnGet ─────────────────────────────────────────────────────
-        // Called every time the browser loads this page (GET request).
-        // Fills Todos and the stat numbers, then Razor renders the view.
+        // ブラウザがこのページを読み込むたびに呼び出されます（GETリクエスト）。
+        // Todos と統計情報を取得し、Razor がビューをレンダリングします。
         public void OnGet()
         {
             try
             {
-                // Call the repository — get back a List<TodoItem> directly
+                // リポジトリを呼び出し、List<TodoItem> を直接取得します
                 Todos = _repo.GetAll(Filter);
 
-                // Get the three stat numbers as a tuple
+                // 3つの統計値をタプルとして取得
                 var stats = _repo.GetStats();
                 StatTotal = stats.Total;
                 StatCompleted = stats.Completed;
@@ -50,17 +50,17 @@ namespace TeamDevelopment_team1.Pages.Todos
             }
             catch (Exception ex)
             {
-                // If the DB is down or the table is missing, show a
-                // friendly message instead of a crash page.
-                ModelState.AddModelError("", "Could not load tasks: " + ex.Message);
+                // DB がダウンしている場合やテーブルが存在しない場合、クラッシュページの代わりに
+                // フレンドリーなメッセージを表示します。
+                ModelState.AddModelError("", "タスクを読み込めませんでした: " + ex.Message);
                 Todos = new List<TodoItem>();
             }
         }
 
-        // ── OnPostToggle ──────────────────────────────────────────────
-        // Called when the user clicks the toggle (complete/incomplete) button.
-        // The form posts the task Id as a hidden field.
-        // Returns IActionResult so we can redirect after saving.
+         // ── OnPostToggle ──────────────────────────────────────────────
+        // ユーザーが完了/未完了の切り替えボタンをクリックしたときに呼び出されます。
+        // フォームはタスクIDを非表示フィールドとして送信します。
+        // 保存後にリダイレクトできるように、IActionResultを返します。
         public IActionResult OnPostToggle(int id)
         {
             // Basic safety check — reject garbage values
@@ -75,18 +75,18 @@ namespace TeamDevelopment_team1.Pages.Todos
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "Could not update task: " + ex.Message);
+                ModelState.AddModelError("", "タスクを更新できませんでした: " + ex.Message);
             }
 
             // POST-Redirect-GET (PRG) pattern:
-            // After a POST we always redirect back to the GET page.
-            // This prevents "resubmit form?" if the user presses F5.
-            // new { Filter } keeps the current filter in the URL.
+            // POSTリクエストの後は、必ずGETページにリダイレクトされます。
+            // これにより、ユーザーがF5キーを押した場合に「フォームを再送信しますか？」というメッセージが表示されるのを防ぎます。
+            // new { Filter } は、現在のフィルターを URL に保持します。
             return RedirectToPage(new { Filter });
         }
 
         // ── OnPostDelete ──────────────────────────────────────────────
-        // Called when the user confirms and submits the Delete form.
+        // ユーザーが削除フォームを確認して送信したときに呼び出されます。
         public IActionResult OnPostDelete(int id)
         {
             if (id <= 0)
@@ -100,7 +100,7 @@ namespace TeamDevelopment_team1.Pages.Todos
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "Could not delete task: " + ex.Message);
+                ModelState.AddModelError("", "タスクを削除できませんでした: " + ex.Message);
             }
 
             return RedirectToPage(new { Filter });
