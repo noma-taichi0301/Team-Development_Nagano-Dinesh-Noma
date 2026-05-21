@@ -157,14 +157,14 @@ namespace TeamDevelopment_team1.Repositories
         // ================================================================
         // / 機能 4 — 更新(UPDATE
         // ================================================================
-        // Overwrites the editable columns of an existing row.
-        // The WHERE Id = @Id makes sure only that one row is changed.
+        // 既存の行の編集可能な列を上書きします。
+        // WHERE句「Id = @Id」により、変更される行は1つだけであることが保証されます。
         public void Update(TodoItem todo)
         {
             using SqlConnection conn = OpenConnection();
 
-            // Only update fields the user can edit on the form.
-            // IsCompleted is NOT here — the toggle button handles that separately.
+            // フォームでユーザーが編集できるフィールドのみを更新します。
+            // IsCompleted はここには含まれません — トグルボタンが別途処理します。
             // CreatedAt is NOT here — it should never change.
             string sql = @"
             UPDATE Todos
@@ -180,33 +180,33 @@ namespace TeamDevelopment_team1.Repositories
                 todo.Detail,
                 todo.DueDate,
                 Priority = (int)todo.Priority,
-                todo.Id          // this goes into WHERE Id = @Id
+                todo.Id          // WHERE句「Id = @Id」に対応します
             });
         }
 
         // ================================================================
-        // FEATURE 5 — ToggleStatus
+        // 機能5 — ステータス切り替え
         // ================================================================
-        // Flips IsCompleted between 0 and 1 with one SQL statement.
-        // No need to read the current value first.
+        // 1つのSQL文でIsCompletedを0と1の間で反転します。
+        // 最初に現在の値を読み取る必要はありません。
         public void ToggleStatus(int id)
         {
             using SqlConnection conn = OpenConnection();
 
-            // ~ is the SQL Server bitwise NOT operator.
-            // On a BIT column it works like this:
-            //   current value = 0  →  ~0 = 1  (task marked complete)
-            //   current value = 1  →  ~1 = 0  (task marked incomplete)
+            // ~ は SQL Server のビット単位の NOT 演算子です。
+            // BIT 列では次のように動作します:
+            //   現在の値 = 0  →  ~0 = 1  (タスクが完了としてマークされます)
+            //   現在の値 = 1  →  ~1 = 0  (タスクが未完了としてマークされます)
             string sql = "UPDATE Todos SET IsCompleted = ~IsCompleted WHERE Id = @Id";
 
             conn.Execute(sql, new { Id = id });
         }
 
         // ================================================================
-        // FEATURE 6 — Delete
+        // 機能6 — 削除
         // ================================================================
-        // Permanently removes a row. Cannot be undone.
-        // The JS confirm() dialog in the view asks "are you sure?" first.
+        // 行を完全に削除します。元に戻すことはできません。
+        // ビューのJS confirm()ダイアログで「本当に削除しますか？」と確認します。
         public void Delete(int id)
         {
             using SqlConnection conn = OpenConnection();
@@ -217,11 +217,11 @@ namespace TeamDevelopment_team1.Repositories
         }
 
         // ================================================================
-        // GetStats
+        // GetStats州を取得する  
         // ================================================================
-        // Returns three numbers for the dashboard stat cards.
-        // Uses a named tuple so we can return multiple values
-        // without creating a separate class.
+        // ダッシュボードの統計カード用に3つの数値を返します。
+        // 名前付きタプルを使用することで、複数の値を返すことができます。
+        // 別途クラスを作成する必要はありません。
         public (int Total, int Completed, int Overdue) GetStats()
         {
             using SqlConnection conn = OpenConnection();
@@ -244,9 +244,9 @@ namespace TeamDevelopment_team1.Repositories
 
             FROM Todos";
 
-            // QueryFirst returns one row as a dynamic object.
-            // dynamic means we can read .Total, .Completed, .Overdue
-            // without declaring a class for it.
+            // QueryFirst は、1 行を動的オブジェクトとして返します。
+            // 動的とは​​、.Total、.Completed、.Overdue を読み取ることができることを意味します。
+            // それらのクラスを宣言する必要はありません。
             dynamic row = conn.QueryFirst(sql);
 
             int total = (int)(row.Total ?? 0);
