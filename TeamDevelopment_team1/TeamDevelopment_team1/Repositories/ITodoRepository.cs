@@ -28,4 +28,8 @@ public interface ITodoRepository
 
     // ページ上部の統計カード用の3つの数値を返します
     (int Total, int Completed, int Overdue) GetStats();
+
+    // ── NEW ───────────────────────────────────────────────
+    // Returns all users for the dropdown on Create/Edit forms
+    List<User> GetAllUsers();
 }
