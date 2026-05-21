@@ -25,10 +25,10 @@ namespace TeamDevelopment_team1.Pages.Todos
         public int StatCompleted { get; set; }
         public int StatOverdue { get; set; }
 
-        // [BindProperty(SupportsGet = true)] means:
-        //   - on POST: the value comes from the form
-        //   - on GET:  the value comes from the URL  (?Filter=incomplete)
-        // This keeps the filter active after toggling or deleting.
+        // [BindProperty(SupportsGet = true)] の意味:
+        // - POST リクエストの場合: 値はフォームから取得されます
+        // - GET リクエストの場合: 値は URL (?Filter=incomplete) から取得されます
+        // これにより、切り替えや削除後もフィルタがアクティブな状態を維持します。
         [BindProperty(SupportsGet = true)]
         public string? Filter { get; set; }
 
