@@ -106,10 +106,10 @@ else
         <table class="todo-table">
             <thead>
                 <tr>
-                    <th style="width:42px">完了</th>
+                    <th style="width:42px; white-space:nowrap;">完了</th>
                     <th>タスク</th>
                     <th style="width:90px">優先度</th>
-                    <th style="width:115px">期限</th>
+                    <th style="width:110px">期限</th>
                     <th style="width:140px">操作</th>
                 </tr>
             </thead>
@@ -143,13 +143,15 @@ else
                         </td>
 
                         <!-- ── タスクタイトル＋詳細 ───────────── -->
+                       
                         <td class="td-title">
-                            <span class="task-name @(todo.IsCompleted ? "task-name--done" : "")">
+                            <span class="task-name @(todo.IsCompleted ? "task-name--done" : "")"
+                                  title="@todo.Title">
                                 @todo.Title
                             </span>
                             @if (!string.IsNullOrWhiteSpace(todo.Detail))
                             {
-                                <span class="task-detail">@todo.Detail</span>
+                                <span class="task-detail" title="@todo.Detail">@todo.Detail</span>
                             }
                         </td>
 
