@@ -23,9 +23,9 @@ namespace TeamDevelopment_team1.Models
         [Display(Name = "優先度")]
         public Priority Priority { get; set; } = Priority.Mid;
 
-        // ── NEW: Assignee ─────────────────────────────────────
-        // Nullable int — user may leave this blank (no assignee)
-        [Display(Name = "Assignee")]
+        // ── 新規: 担当者 ─────────────────────────────────────
+        //null許容整数 — ユーザーはこの欄を空白のままにできます（担当者なし）。
+        [Display(Name = "担当者")]
         public int? AssigneeId { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace TeamDevelopment_team1.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TeamDevelopment_team1.Models
 {
     // ================================================================
 
@@ -27,12 +29,13 @@
         public DateTime CreatedAt { get; set; }
 
 
-        /* ── NEW: Assignee ───────────────────────────────────── */
-    // Stores the foreign key value from the DB column
-    public int? AssigneeId { get; set; }
+        /* ── 新機能：担当者 ───────────────────────────────────── */
+        // DB列から外部キーの値を格納します
+        [Display(Name = "担当者")]
+        public int? AssigneeId { get; set; } = 0;   // ← デフォルト0は未割り当てを意味します
 
-        // Stores the name from the JOIN — NOT a DB column
-        // Dapper fills this from "u.Name AS AssigneeName" in the SQL
+        // JOINから名前を格納 — DB列ではありません
+        // DapperはSQLの "u.Name AS AssigneeName" からこれを設定します
         public string? AssigneeName { get; set; }
 
         // ── 計算プロパティ ───────────────────────────────────────

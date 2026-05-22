@@ -46,14 +46,18 @@
             </div>
         </div>
         <div class="field">
-            <label asp-for="Input.AssigneeId" class="field-label">Assignee</label>
+            <label asp-for="Input.AssigneeId" class="field-label">担当者</label>
             <select asp-for="Input.AssigneeId" class="field-input field-select">
-                <!-- blank option = no assignee -->
-                <option value="">— Unassigned —</option>
+
+                <!-- value="0" = 担当者なし -->
+                <option value="0">— 未割り当て —</option>
+
                 @foreach (var user in Model.Users)
                 {
+                    <!-- asp-for は「selected」属性を自動的に処理します -->
                     <option value="@user.Id">@user.Name</option>
                 }
+
             </select>
             <span asp-validation-for="Input.AssigneeId" class="field-error"></span>
         </div>

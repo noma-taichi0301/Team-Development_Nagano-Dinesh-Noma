@@ -666,13 +666,13 @@ a {
     border: 1px solid rgba(91,141,239,0.2);
     white-space: nowrap;
 }
-/* Assignee column cell */
+/* 担当者て列セル */
 .td-assignee {
     white-space: nowrap;
 }
 
 /* Assignee chip — the blue pill with person icon */
-.assignee-chip {
+/*.assignee-chip {
     display: inline-flex;
     align-items: center;
     gap: 4px;
@@ -686,7 +686,7 @@ a {
     white-space: nowrap;
 }
 
-/* Dash shown when no assignee */
+/* 担当者がいない場合はダッシュが表示されます */
 .assignee-none {
     color: var(--text-light);
     font-size: 13px;

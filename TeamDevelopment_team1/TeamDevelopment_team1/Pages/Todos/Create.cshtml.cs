@@ -21,7 +21,7 @@ namespace TeamDevelopment_team1.Pages.Todos
         [BindProperty]
         public TodoInputModel Input { get; set; } = new TodoInputModel();
 
-        // ── NEW: list of users for the dropdown ───────────────
+        // ── 新機能：ドロップダウンリストのユーザー一覧 ───────────────
         public List<User> Users { get; set; } = new List<User>();
 
         // ── OnGet ─────────────────────────────────────────────────────
@@ -29,7 +29,7 @@ namespace TeamDevelopment_team1.Pages.Todos
         // 空のフォームをレンダリングするだけで、DBから読み込む必要はありません。
         public IActionResult OnGet()
         {
-            // ── NEW: load users so the dropdown has options ───
+            // ── 新機能：ユーザーを読み込むことで、ドロップダウンリストにオプションが表示されるようになります ───
             Users = _repo.GetAllUsers();
             return Page();
         }
@@ -68,7 +68,10 @@ namespace TeamDevelopment_team1.Pages.Todos
                                : Input.Detail.Trim(),
                 DueDate = Input.DueDate,
                 Priority = Input.Priority,
-                AssigneeId = Input.AssigneeId   // ← NEW
+                
+                AssigneeId = (Input.AssigneeId == null || Input.AssigneeId == 0)
+                 ? null
+                 : Input.AssigneeId
             };
 
             try

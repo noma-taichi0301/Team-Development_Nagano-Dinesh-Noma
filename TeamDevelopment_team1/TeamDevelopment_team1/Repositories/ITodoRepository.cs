@@ -30,6 +30,6 @@ public interface ITodoRepository
     (int Total, int Completed, int Overdue) GetStats();
 
     // ── NEW ───────────────────────────────────────────────
-    // Returns all users for the dropdown on Create/Edit forms
+    // Create/Editフォームのドロップダウンリストに表示されるすべてのユーザーを返します。
     List<User> GetAllUsers();
 }
