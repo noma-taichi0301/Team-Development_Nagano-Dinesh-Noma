@@ -130,13 +130,13 @@ namespace TeamDevelopment_team1.Repositories
                 todo.Detail,
                 todo.DueDate,
                 Priority = (int)todo.Priority,
-                todo.AssigneeId      // null is fine — SQL allows NULL here	
+                todo.AssigneeId      // nullでも問題ありません。SQLではここでNULLが許可されています。	
 
             });
         }
 
         // ================================================================
-        // / 機能 4 — 更新(UPDATE
+        // / 機能 4 — 更新(UPDATE)
         // ================================================================
         // 既存の行の編集可能な列を上書きします。
         // WHERE句「Id = @Id」により、変更される行は1つだけであることが保証されます。
@@ -152,7 +152,9 @@ namespace TeamDevelopment_team1.Repositories
             SET    Title    = @Title,
                    Detail   = @Detail,
                    DueDate  = @DueDate,
-                   Priority = @Priority
+                   Priority = @Priority,
+                   AssigneeId = @AssigneeId	
+
             WHERE  Id = @Id";
 
             conn.Execute(sql, new
@@ -161,6 +163,7 @@ namespace TeamDevelopment_team1.Repositories
                 todo.Detail,
                 todo.DueDate,
                 Priority = (int)todo.Priority,
+                todo.AssigneeId,
                 todo.Id          // WHERE句「Id = @Id」に対応します
             });
         }
@@ -237,6 +240,8 @@ namespace TeamDevelopment_team1.Repositories
             return (total, completed, overdue);
         }
 
+        // ── NEW: GetAllUsers ───────────────────────────────────────────────
+        // Users テーブルからすべてのユーザーを取得し、User オブジェクトのリストを返します。
         public List<User> GetAllUsers()
         {
             using SqlConnection conn = OpenConnection();

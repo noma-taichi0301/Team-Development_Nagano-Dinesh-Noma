@@ -108,8 +108,8 @@ else
                 <tr>
                     <th style="width:42px; white-space:nowrap;">完了</th>
                     <th >タスク</th>
-                    <th style="width:90px">優先度</th>
-                    <th style="width:110px">担当者</th>    <!-- ← ADDED THIS -->
+                    <th style="width:90px">担当者</th>
+                    <th style="width:110px">優先度</th>    
                     <th style="width:110px">期限</th>
                     <th style="width:140px">操作</th>
                 </tr>
@@ -156,7 +156,7 @@ else
                             }
                         </td>
 
-                        <!-- ── Assignee ───────────── -->
+                        <!-- ── 担当者 ───────────── -->
 
                         <td class="td-assignee">
                             @if (!string.IsNullOrEmpty(todo.AssigneeName))
@@ -183,7 +183,7 @@ else
                             </span>
                         </td>
 
-                        <!-- ── 期限 + 期限切れバッジ ───────────── MM/dd/yy"-->
+                        <!-- ── 期限 + 期限切れバッジ ───────────── yy/MM/dd"-->
                         <td class="td-date">
                             @if (todo.DueDate.HasValue)
                             {
@@ -206,18 +206,9 @@ else
                                 <span class="date-none">—</span>
                             }
                         </td>
-                        <!-- After the priority chip span -->
-                       @if (!string.IsNullOrEmpty(todo.AssigneeName))
-                       {
-                           <span class="assignee-chip">
-                               <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                   <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-                                   <circle cx="12" cy="7" r="4"/>
-                               </svg>
-                               @todo.AssigneeName
-                           </span>
-}
+                        
+                      
+
 
                         <!-- ── 編集 + 削除ボタン ─────────── -->
                         <td class="td-actions">

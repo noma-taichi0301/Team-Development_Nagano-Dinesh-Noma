@@ -41,7 +41,7 @@ namespace TeamDevelopment_team1.Pages.Todos
         // ページヘッダーに表示されるタイトル: "Editing: Buy groceries"
         public string TaskTitle { get; set; } = "";
 
-        // ── NEW ───────────────────────────────────────────────
+        // ──新機能：ドロップダウンリストのユーザー ───────────────────────────────────────────────
         public List<User> Users { get; set; } = new List<User>();
 
         // ── OnGet ─────────────────────────────────────────────────────
@@ -67,7 +67,7 @@ namespace TeamDevelopment_team1.Pages.Todos
                 return NotFound();   // HTTP 404 を返します
             }
 
-            // ── NEW: load users for dropdown ──────────────────
+            // ── 新機能：ドロップダウンリストのユーザーを読み込む ──────────────────
             Users = _repo.GetAllUsers();
 
             // 非表示フィールドに Id を保持するため、フォームに埋め込みます
@@ -116,7 +116,10 @@ namespace TeamDevelopment_team1.Pages.Todos
                                : Input.Detail.Trim(),
                 DueDate = Input.DueDate,
                 Priority = Input.Priority,
-                AssigneeId = Input.AssigneeId
+                // ──  0をnullに変換し、その他の値はそのまま保持します。 ──
+                AssigneeId = (Input.AssigneeId == null || Input.AssigneeId == 0)
+                     ? null
+                     : Input.AssigneeId
             };
 
             try

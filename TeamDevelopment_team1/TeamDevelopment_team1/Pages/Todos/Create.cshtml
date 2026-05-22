@@ -43,10 +43,10 @@
             </div>
         </div>
         <div class="field">
-            <label asp-for="Input.AssigneeId" class="field-label">Assignee</label>
+            <label asp-for="Input.AssigneeId" class="field-label">担当者</label>
             <select asp-for="Input.AssigneeId" class="field-input field-select">
-                <!-- blank option = no assignee -->
-                <option value="">— Unassigned —</option>
+                <!-- 空欄オプション＝担当者なし -->
+                <option value="">— 未割り当て —</option>
                 @foreach (var user in Model.Users)
                 {
                     <option value="@user.Id">@user.Name</option>
