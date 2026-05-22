@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-// 依存性注入の設定: ITodoRepository を TodoRepository にマッピングします。
+// 依存性注入の設定(Dependency Injection Setup): ITodoRepository を TodoRepository にマッピングします。
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 
 var app = builder.Build();
@@ -23,7 +23,7 @@ app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages();
 
-// // "/" にアクセスすると、自動的にタスクリストにリダイレクトされます。
+//  "/" にアクセスすると、自動的にタスクリストにリダイレクトされます。
 app.MapGet("/", () => Results.Redirect("/Todos"));
 
 app.Run();
