@@ -206,15 +206,16 @@ namespace TeamDevelopment_team1.Repositories
         // ダッシュボードの統計カード用に3つの数値を返します。
         // 名前付きタプルを使用することで、複数の値を返すことができます。
         // 別途クラスを作成する必要はありません。
+        // IsCompleted は BIT 型ですが、SUM するには INT にキャストする必要があります。
         public (int Total, int Completed, int Overdue) GetStats()
         {
-            using SqlConnection conn = OpenConnection();
+            using SqlConnection conn = OpenConnection();      
 
             string sql = @"
             SELECT
                 COUNT(*) AS Total,
 
-                SUM(CAST(IsCompleted AS INT)) AS Completed,
+                SUM(CAST(IsCompleted AS INT)) AS Completed,          
 
                 SUM(
                     CASE
@@ -231,9 +232,9 @@ namespace TeamDevelopment_team1.Repositories
             // QueryFirst は、1 行を動的オブジェクトとして返します。
             // 動的とは​​、.Total、.Completed、.Overdue を読み取ることができることを意味します。
             // それらのクラスを宣言する必要はありません。
-            dynamic row = conn.QueryFirst(sql);
+            dynamic row = conn.QueryFirst(sql);    
 
-            int total = (int)(row.Total ?? 0);
+            int total = (int)(row.Total ?? 0);   // SQLの集計関数は、行がない場合にNULLを返すことがあります。これを0に変換します。
             int completed = (int)(row.Completed ?? 0);
             int overdue = (int)(row.Overdue ?? 0);
 

@@ -17,6 +17,7 @@
         <div class="stat-label">合計タスク</div>
         <div class="stat-value">@Model.StatTotal</div>
     </div>
+
     <div class="stat-card stat-card--green">
         <div class="stat-label">完了済み</div>
         <div class="stat-value">@Model.StatCompleted</div>
@@ -139,7 +140,7 @@ else
                                         </svg>
                                     }
                                 </button>
-                                @Html.AntiForgeryToken()
+                                @Html.AntiForgeryToken()   <!-- CSRF対策のためのトークン Two Unique Tokens[Cookie Token,Form Token:] -->
                             </form>
                         </td>
 
