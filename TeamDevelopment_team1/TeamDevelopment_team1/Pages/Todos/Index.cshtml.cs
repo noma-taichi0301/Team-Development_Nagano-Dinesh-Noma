@@ -29,7 +29,7 @@ namespace TeamDevelopment_team1.Pages.Todos
         // - POST リクエストの場合: 値はフォームから取得されます
         // - GET リクエストの場合: 値は URL (?Filter=incomplete) から取得されます
         // これにより、切り替えや削除後もフィルタがアクティブな状態を維持します。
-        [BindProperty(SupportsGet = true)]
+        [BindProperty(SupportsGet = true)]  
         public string? Filter { get; set; }
 
         // ── OnGet ─────────────────────────────────────────────────────
